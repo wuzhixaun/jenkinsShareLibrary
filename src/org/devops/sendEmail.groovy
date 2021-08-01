@@ -1,9 +1,8 @@
 package org.devops
 
-class sendEmail {
-    //定义邮件内容
-    def SendEmail(status,emailUser){
-        emailext body: """
+//定义邮件内容
+def SendEmail(status,emailUser){
+    emailext body: """
             <!DOCTYPE html> 
             <html> 
             <head> 
@@ -37,8 +36,7 @@ class sendEmail {
                 </table> 
             </body> 
             </html>  """,
-                subject: "Jenkins-${JOB_NAME}项目构建信息 ",
-                to: emailUser
+            subject: "Jenkins-${JOB_NAME}项目构建信息 ",
+            to: emailUser
 
-    }
 }
